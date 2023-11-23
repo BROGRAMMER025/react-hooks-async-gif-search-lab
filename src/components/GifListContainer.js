@@ -8,13 +8,13 @@ class GifListContainer extends Component {
   };
 
   fetchGifs = (query) => {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your Giphy API key
+    const apiKey = 'YOUR_API_KEY';
     const url = `https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${apiKey}&rating=g`;
 
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        const gifs = data.data.slice(0, 3); // Take the first 3 gifs from the response
+        const gifs = data.data.slice(0, 3); 
         this.setState({ gifs });
       })
       .catch(error => console.error('Error fetching data:', error));
